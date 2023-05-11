@@ -17,6 +17,7 @@
 }
 
 body {
+  padding-top: 1rem;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,4 +25,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  background-color: #111;
+  max-width: 1248px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body:nth-child(2) {
+  margin: auto;
 }
