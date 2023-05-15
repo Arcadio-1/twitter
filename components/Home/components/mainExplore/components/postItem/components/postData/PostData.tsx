@@ -11,7 +11,7 @@ const PostData = () => {
           <span className="text-gray-500">. 12h</span>
         </div>
         <div>
-          <Horiz_3_dot_icon />
+          <Horiz_3_dot_icon size={10} />
         </div>
       </div>
     </div>
