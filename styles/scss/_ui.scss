@@ -1,0 +1,292 @@
+.backDrop {
+  position: fixed;
+  background-color: rgba(51, 51, 51, 0.519);
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
+#overLay {
+}
+.dflex {
+  @include dflex;
+}
+// .Modal {
+//   &-enter {
+//     opacity: 0;
+//   }
+//   &-enter-active {
+//     opacity: 1;
+//     transition: opacity 200ms;
+//   }
+//   &-exit {
+//     opacity: 1;
+//   }
+//   &-exit-active {
+//     opacity: 0;
+//     transition: opacity 200ms;
+//   }
+// }
+
+// .Modal {
+//   border: 2px solid red;
+// }
+// .Modal-enter {
+//   opacity: 0;
+// }
+// .Modal-enter-active {
+//   opacity: 1;
+//   transition: opacity 200ms;
+// }
+// .Modal-exit {
+//   opacity: 1;
+// }
+// .Modal-exit-active {
+//   opacity: 0;
+//   transition: opacity 200ms;
+// }
+.testDiv {
+  z-index: 10000;
+  width: 10rem;
+  height: 10rem;
+  background-color: red;
+}
+.ModalOpen {
+  animation: openModal 0.4s ease-out forwards;
+}
+
+.ModalClosed {
+  animation: closeModal 1s ease-out forwards;
+}
+@keyframes openModal {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(90%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeModal {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+.Form {
+  width: 100%;
+  // border: 2px solid red;
+  &-item {
+    &-container {
+      margin-bottom: 1.5em;
+    }
+  }
+  &-action {
+    // border: 2px solid red;
+    // max-width: 300px;
+    margin: 2em auto;
+    @include dflex;
+    gap: 1em;
+
+    &-submit {
+      cursor: pointer;
+      font-family: iransans;
+      padding: 0.2em 3em;
+      border-radius: 5px;
+      color: color(light-2);
+      background-color: color(g1-2);
+      border: transparent;
+      // font-size: 1.5em;
+      width: 100%;
+      line-height: 2.5rem;
+      &:hover {
+        background-color: rgba(color(g1-2), 0.9);
+      }
+    }
+    &-secondary {
+      cursor: pointer;
+      font-family: iransans;
+      border-radius: 3px;
+      padding: 0.2em 1em;
+      color: color(light-2);
+      margin-left: auto;
+      background-color: rgba(color(g1-7), 0.7);
+      border: transparent;
+      &:hover {
+        background-color: rgba(color(g1-7), 0.65);
+      }
+    }
+  }
+}
+.sideNotif {
+  position: fixed;
+  z-index: 100;
+  top: 150px;
+  left: 10px;
+  // padding: 0.5em 2em;
+  border-radius: 5px;
+  color: color(light-1);
+  &-header {
+    @include dflex(space-between);
+    height: 3em;
+    padding: 0 0.5em;
+    border-bottom: 2px solid rgba(color(light-1), 0.5);
+    svg {
+      width: 2em;
+      height: 2em;
+      path {
+        fill: color(light-1);
+      }
+    }
+  }
+  &-message {
+    padding: 1em 3em;
+    font-size: 1.5em;
+  }
+  &-success {
+    animation: openModal 0.4s ease-out forwards;
+    background-color: color(success);
+  }
+  &-loading {
+    animation: openModal 0.4s ease-out forwards;
+    background-color: color(info);
+  }
+  &-error {
+    animation: openModal 0.4s ease-out forwards;
+    background-color: color(error);
+  }
+  &-warning {
+    animation: openModal 0.4s ease-out forwards;
+    background-color: color(warning);
+  }
+  &-null {
+    animation: closeModal 1s ease-out forwards;
+  }
+}
+
+.hideInXL {
+  @include responsive(xl) {
+    display: none;
+  }
+}
+.hideInLG {
+  @include responsive(lg) {
+    display: none;
+  }
+}
+.hideInMD {
+  @include responsive(md) {
+    display: none !important;
+  }
+}
+.hideInSM {
+  @include responsive(sm) {
+    display: none;
+  }
+}
+.showInLG {
+  @include responsive(lg) {
+    display: inline;
+  }
+}
+.showInMD {
+  display: none !important;
+  @include responsive(md) {
+    display: flex !important;
+  }
+}
+.showInSm {
+  display: none !important;
+  @include responsive(sm) {
+    display: flex !important;
+  }
+}
+.fnNum {
+  font-family: iransansnum;
+}
+.fnYekan {
+  font-family: iranyekan;
+}
+
+//////////
+
+.isLoading {
+  border: transparent;
+  border-radius: 5px;
+  margin-bottom: 1.2rem;
+  background-color: rgb(148, 148, 148);
+  animation: skelet 3s ease-in-out infinite;
+  // opacity: 0.4;
+}
+@keyframes skelet {
+  0% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.5;
+  }
+}
+
+////////////////////
+
+.backloading {
+  backdrop-filter: blur(10px);
+  background: #832626;
+  background-image: linear-gradient(
+    90deg,
+    #bcb9b9 0px,
+    #c2c1c1 40px,
+    #b1b1b1 80px
+  );
+  animation: shine-loading-image 2s infinite ease-out;
+}
+
+.itemLoading {
+  background: #832626;
+  background-image: linear-gradient(
+    90deg,
+    #ececec 0px,
+    #ddd 40px,
+    #ececec 80px
+  );
+  border-radius: 3px;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+
+@keyframes shine-loading-image {
+  0% {
+    background-position: -32px;
+  }
+  40%,
+  100% {
+    background-position: 208px;
+  }
+}
+
+@keyframes shine-loading-container-items {
+  0% {
+    background-position: -100px;
+  }
+  40%,
+  100% {
+    background-position: 140px;
+  }
+}

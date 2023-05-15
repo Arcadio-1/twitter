@@ -1,0 +1,94 @@
+.postItem {
+  &_action {
+    @include dflex(flex-start);
+    gap: 3rem;
+    margin-top: 0.75rem;
+    #comment {
+      fill: #888;
+      :hover {
+        span {
+          filter: drop-shadow(0px 0px 5px #15a6f4);
+          color: #15a6f4;
+        }
+        svg {
+          filter: drop-shadow(0px 0px 5px #15a6f4);
+          fill: #15a6f4 !important;
+        }
+      }
+    }
+    #retweet {
+      fill: #888;
+      :hover {
+        span {
+          filter: drop-shadow(0px 0px 5px #07b00a);
+          color: #07b00a;
+        }
+        svg {
+          filter: drop-shadow(0px 0px 5px #07b00a);
+          fill: #07b00a !important;
+        }
+      }
+    }
+    #like {
+      fill: #888;
+      :hover {
+        span {
+          filter: drop-shadow(0px 0px 5px #f7184c);
+          color: #f7184c;
+        }
+        svg {
+          filter: drop-shadow(0px 0px 5px #f7184c);
+          fill: #f7184c !important;
+        }
+      }
+    }
+    #statistics {
+      fill: #888;
+      // fill: red;
+      :hover {
+        span {
+          filter: drop-shadow(0px 0px 5px #15a6f4);
+          color: #15a6f4;
+        }
+        svg {
+          filter: drop-shadow(0px 0px 5px #15a6f4);
+          fill: #15a6f4 !important;
+          rect {
+            fill: #15a6f4;
+          }
+        }
+      }
+    }
+    #share {
+      stroke: #888;
+      :hover {
+        span {
+          filter: drop-shadow(0px 0px 5px #15a6f4);
+          color: #15a6f4;
+        }
+        svg {
+          filter: drop-shadow(0px 0px 5px #15a6f4);
+          stroke: #15a6f4 !important;
+        }
+      }
+    }
+    &_item {
+      @include dflex;
+      // gap: 0.5rem;
+      padding: 0.2rem 1.5rem;
+      cursor: pointer;
+      &_icon {
+        @apply rounded-full;
+        svg {
+          transition: all 200ms ease-in-out;
+          padding: 5px;
+        }
+      }
+      &:hover {
+        .postItem_action_item_icon {
+          background-color: #222;
+        }
+      }
+    }
+  }
+}
