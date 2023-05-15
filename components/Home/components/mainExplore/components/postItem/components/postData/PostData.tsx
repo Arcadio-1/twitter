@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Horiz_3_dot_icon from "../hoeiz_3_dot_icon";
 const PostData = () => {
   return (
     <div>
@@ -10,13 +11,7 @@ const PostData = () => {
           <span className="text-gray-500">. 12h</span>
         </div>
         <div>
-          <Image
-            priority={false}
-            src={"/assets/icons/horiz_3_dots.svg"}
-            alt="menu"
-            width={20}
-            height={10}
-          />
+          <Horiz_3_dot_icon />
         </div>
       </div>
     </div>
